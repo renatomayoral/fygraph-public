@@ -11,9 +11,9 @@ const cLatestQuery = async (
         limit?: number 
         orderBy?: {
           rank?: Prisma.SortOrder
-          // marketCap?: Prisma.SortOrder
-          // volume?: Prisma.SortOrder
-          // rate?: Prisma.SortOrder
+          marketCap?: Prisma.SortOrder
+          volume?: Prisma.SortOrder
+          rate?: Prisma.SortOrder
           }
 
         },

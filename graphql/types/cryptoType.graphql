@@ -2,6 +2,9 @@ scalar DateTime
 
 input LatestInput {
   rank: Sort
+  rate: Sort
+  volume: Sort
+  marketCap: Sort
 }
 
 enum Sort {
