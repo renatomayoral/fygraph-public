@@ -1,0 +1,20 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("PRISMA_URL") 
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model cryptoLatest {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  date      DateTime  @default(now())
+  rank      Int
+  code      String
+  name      String
+  rate      Float
+  volume    Float
+  marketCap Float
+  delta     Json
+}

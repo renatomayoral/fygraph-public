@@ -1,0 +1,36 @@
+scalar DateTime
+
+input LatestInput {
+  rank: Sort
+}
+
+enum Sort {
+    asc
+    desc
+  }
+
+type Query {
+  info: String
+  getCryptoLatest(code: String, orderBy: LatestInput, offset: Int, limit: Int ): [CryptoLatest]!
+}
+
+type CryptoLatest {
+  id: ID!
+  date: DateTime!
+  rank: Float!
+  code: String!
+  name: String!
+  rate: Float!
+  volume: Float!
+  marketCap: Float!
+  delta: Delta!
+}
+
+type Delta {
+  hour: Float
+  day: Float
+  week: Float
+  month: Float
+  quarter: Float
+  year: Float
+}
