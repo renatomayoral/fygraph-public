@@ -1,20 +1,20 @@
 scalar DateTime
 
 input LatestInput {
-  rank: Sort
-  rate: Sort
-  volume: Sort
-  marketCap: Sort
+  rank: SortOrder
+  rate: SortOrder
+  volume: SortOrder
+  marketCap: SortOrder
 }
 
-enum Sort {
+enum SortOrder {
     asc
     desc
   }
 
 type Query {
   info: String
-  getCryptoLatest(code: String, orderBy: LatestInput, offset: Int, limit: Int ): [CryptoLatest]!
+  getCryptoLatest(code: String, orderBy: LatestInput, offset: Int, limit: Int ): [CryptoLatest!]!
 }
 
 type CryptoLatest {
